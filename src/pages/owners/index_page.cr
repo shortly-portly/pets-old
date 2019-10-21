@@ -3,7 +3,7 @@ class Owners::IndexPage < MainLayout
 
   def content
     table do
-      header ["id", "First Name", "Last Name", "Age", "", ""]
+      header ["First Name", "Last Name", "Age", "", "", ""]
 
       @owners.each do |owner|
         row(owner)
@@ -33,6 +33,9 @@ class Owners::IndexPage < MainLayout
       end
       td do
         link "Delete", to: Owners::Delete.with(owner.id), flow_id: "delete-owner"
+      end
+      td do
+        link "New Pet", to: Pets::New.with(owner.id), flow_id: "new-pet"
       end
     end
   end

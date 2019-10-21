@@ -6,6 +6,7 @@ class CreateOwners::V20191009213734 < Avram::Migrator::Migration::V1
       add first_name : String
       add last_name : String
       add age : Int32
+      
       add_timestamps
     end
 
